@@ -90,7 +90,9 @@ Save the generated JSON file containing your private key securely.
 2. Rename the private key file:
 
 Copy the generated JSON file to the server directory.
+
 Rename the file to firebase-key.json.
+
 Running the Server
 
 1. To run the backend server, follow the instructions below:
