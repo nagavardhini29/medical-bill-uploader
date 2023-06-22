@@ -25,7 +25,6 @@ function HomePage() {
     const fetchBills = async (uid) => {
       try {
         // Make an API request to fetch bills for the current user
-        console.log("hello")
         const response = await fetch(`http://localhost:8000/api/bills/${uid}`);
         if (!response.ok) {
           throw new Error('Error fetching bills');
@@ -45,12 +44,12 @@ function HomePage() {
     const user = auth.currentUser;
     if (user) {
       setUserId(user.uid);
-      console.log("direct",user.uid);
+      console.log("direct", user.uid);
       fetchBills(user.uid);
     } else {
       // Try to retrieve the user from local storage
       const storedUserId = localStorage.getItem('userId');
-      console.log("refresh",storedUserId);
+      console.log("refresh", storedUserId);
       if (storedUserId) {
         setUserId(storedUserId);
         fetchBills(storedUserId);
@@ -69,7 +68,7 @@ function HomePage() {
       } else {
         // User is not authenticated, redirect to login or handle as needed
         setUserId(null);
-        console.log("refresh",localStorage.getItem("userId"));
+        console.log("refresh", localStorage.getItem("userId"));
         localStorage.removeItem('userId');
         navigate('/');
       }
@@ -94,51 +93,72 @@ function HomePage() {
   };
 
   return (
-    <div style={{
-      backgroundImage: `url(${background})`, backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-      width: '100vw',
-      height: '100vh'
-    }}>
-    <div className="container">
-      {/* <h1 className="mb-4">Bill Management</h1> */}
-      <Grid container spacing={3}>
-        {bills.map((bill) => (
-          <Grid item xs={11} sm={5} md={3} key={bill.id}>
-            <Card sx={{ borderRadius: '16px' }}>
-            <img
-                src={bill.billPicture}
-                alt={bill.name}
-                className="card-img-top"
-                style={{ height: '200px' }}
-              />
-              <CardContent>
-                <Typography variant="h5" component="div">
-                  {bill.name}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  <strong>Patient Name:</strong> {bill.patientName}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  <strong>Patient Address:</strong> {bill.patientAddress}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  <strong>Hospital Name:</strong> {bill.hospitalName}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  <strong>Bill Amount:</strong> {bill.billAmount}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  <strong>Date of Service:</strong> {bill.dateOfService}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-      <br/>
-      <div className="button-container" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '1rem' }}>
+    <div
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        width: '100vw',
+        height: '100vh',
+        overflow: 'auto',
+        padding: '20px',
+        boxSizing: 'border-box', 
+      }}
+    >
+      <div
+        className="container"
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          minHeight: `${bills.length * (100)}px`,
+          minWidth: '100%',
+          maxHeight: '100%',
+          overflowY: 'hidden',
+          scrollBehavior: 'smooth',
+          paddingTop: '60px',
+        }}
+      >
+        <Grid container spacing={3}>
+          {bills.map((bill, index) => (
+            <Grid item xs={11} sm={5} md={3} key={bill.id} style={{ marginTop: index === 0 ? '-40px' : '0' }} >
+              <Card sx={{ borderRadius: '16px' }}>
+                <img
+                  src={bill.billPicture}
+                  alt="Bill Picture"
+                  className="card-img-top"
+                  style={{ height: '200px' }}
+                />
+                <CardContent>
+                  <Typography variant="h5" component="div">
+                    {bill.name}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    <strong>Patient Name:</strong> {bill.patientName}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    <strong>Patient Address:</strong> {bill.patientAddress}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    <strong>Hospital Name:</strong> {bill.hospitalName}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    <strong>Bill Amount:</strong> {bill.billAmount}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    <strong>Date of Service:</strong> {bill.dateOfService}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+        <br />
+        <div
+        className="button-container"
+        style={{ display: 'flex', justifyContent: 'space-between', marginTop: '1rem', marginBottom: '1rem' }}
+      >
         <Link to="/form">
           <Button variant="contained" color="primary" sx={{ marginRight: '1rem' }}>
             Add New Bill
@@ -151,8 +171,11 @@ function HomePage() {
         </Link>
       </div>
     </div>
-    </div>
-  );
+  </div>
+);  
 }
 
 export default HomePage;
+
+
+
