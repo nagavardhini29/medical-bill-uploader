@@ -82,9 +82,13 @@ Before running the server, you need to configure it with your Firebase project. 
 1. Generate a private key file for your Firebase project:
 
 Go to the Firebase console and select your project.
+
 Click on the "Settings" icon (gear) next to "Project Overview" in the left sidebar.
+
 Go to the "Service Accounts" tab.
+
 Click on "Generate new private key".
+
 Save the generated JSON file containing your private key securely.
 
 2. Rename the private key file:
