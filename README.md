@@ -6,6 +6,7 @@ Prerequisites
 Before running the project, make sure you have the following prerequisites installed:
 
 Node.js: Download and Install Node.js
+
 npm: npm is installed with Node.js. Make sure you have npm version 6 or above.
 
 Installation
