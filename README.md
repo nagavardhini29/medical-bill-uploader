@@ -120,7 +120,9 @@ node server.js
 **API endpoints used**
 
 To fetch the data in home page
+
 GET request: http://localhost:8000/api/bills/${uid}
 
 To push the data to firestore
+
 POST request: http://localhost:8000/api/bills
