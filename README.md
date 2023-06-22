@@ -67,12 +67,15 @@ npm start
 The page will automatically reload if you make any changes to the code. You will also see any lint errors in the console.
 
 Backend Express.js Server
+
 The Medical Bill Uploader project uses an Express.js server for handling backend functionality. Follow the instructions below to set up and run the server.
 
 Prerequisites
+
 Before running the backend server, make sure you have the Node.js installed
 
 Configuration
+
 Before running the server, you need to configure it with your Firebase project. The server uses Firebase Admin SDK to interact with Firebase services.
 
 1. Generate a private key file for your Firebase project:
