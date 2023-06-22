@@ -45,7 +45,8 @@ REACT_APP_APP_ID=<your-app-id>
 Running the Application
 To run the application, make sure you have completed the installation and configuration steps mentioned above. Then, follow the instructions below:
 
-1. In the project directory, run the following command:
+1. In the project directory, run the following commands:
+npm init
 npm start
 
 2. The app will start running in the development mode.
