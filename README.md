@@ -59,6 +59,8 @@ Running the Application
 To run the application, make sure you have completed the installation and configuration steps mentioned above. Then, follow the instructions below:
 
 1. In the project directory, run the following commands:
+cd react-app
+
 npm install
 
 npm start
@@ -102,11 +104,15 @@ Rename the file to firebase-key.json.
 Running the Server
 
 1. To run the backend server, follow the instructions below:
+cd express
+
+npm install
+
 node server.js
 
-2. The server will start running on http://localhost:8000.
+3. The server will start running on http://localhost:8000.
 
-3. The server is now ready to handle requests from the Medical Bill Uploader application.
+4. The server is now ready to handle requests from the Medical Bill Uploader application.
 
 API endpoints used:
 
