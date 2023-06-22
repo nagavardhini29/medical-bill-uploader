@@ -59,7 +59,7 @@ Running the Application
 To run the application, make sure you have completed the installation and configuration steps mentioned above. Then, follow the instructions below:
 
 1. In the project directory, run the following commands:
-npm init
+npm install
 
 npm start
 
