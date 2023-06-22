@@ -14,13 +14,17 @@ Navigate to the project directory
 Install dependencies
 
 Configuration
+
 Before running the application, you need to configure it with your Firebase project.
 
 1. Create a Firebase project:
 
 Go to the Firebase website (https://firebase.google.com) and sign in with your Google account.
+
 Click on "Go to Console" or "Add project" to create a new Firebase project.
+
 Enter a name for your project and select your country/region.
+
 Review and agree to the terms and click "Create Project".
 
 2. Set up Firebase in your project:
@@ -35,11 +39,17 @@ In the project directory, open the file firebaseConfig.js
 Replace the placeholder values in the file with your Firebase configuration:
 
 REACT_APP_API_KEY=<your-api-key>
+
 REACT_APP_AUTH_DOMAIN=<your-auth-domain>
+
 REACT_APP_DATABASE_URL=<your-database-url>
+
 REACT_APP_PROJECT_ID=<your-project-id>
+
 REACT_APP_STORAGE_BUCKET=<your-storage-bucket>
+
 REACT_APP_MESSAGING_SENDER_ID=<your-messaging-sender-id>
+
 REACT_APP_APP_ID=<your-app-id>
 
 Running the Application
@@ -47,11 +57,12 @@ To run the application, make sure you have completed the installation and config
 
 1. In the project directory, run the following commands:
 npm init
+
 npm start
 
-2. The app will start running in the development mode.
+3. The app will start running in the development mode.
 
-3. Open http://localhost:3000 in your web browser to view the application.
+4. Open http://localhost:3000 in your web browser to view the application.
 
 The page will automatically reload if you make any changes to the code. You will also see any lint errors in the console.
 
