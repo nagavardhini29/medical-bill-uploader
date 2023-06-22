@@ -60,6 +60,7 @@ REACT_APP_APP_ID=<your-app-id>
 To run the application, make sure you have completed the installation and configuration steps mentioned above. Then, follow the instructions below:
 
 1. In the project directory, run the following commands:
+   
 cd react-app
 
 npm install
@@ -105,6 +106,7 @@ Rename the file to firebase-key.json.
 **Running the Server**
 
 1. To run the backend server, follow the instructions below:
+   
 cd express
 
 npm install
