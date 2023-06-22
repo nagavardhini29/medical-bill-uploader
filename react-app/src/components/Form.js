@@ -130,15 +130,7 @@ const Form = ({ handleFormSubmit, formData: initialFormData }) => {
     setSubmitting(false);
   };
 
-  useEffect(() => {
-    document.body.style.backgroundColor = 'green';
-    return () => {
-      document.body.style.backgroundColor = '';
-    };
-  }, []);
-
   return (
-    <div style={{ backgroundColor: 'green' }}>
     <FormProvider {...methods}>
       <div className="container-form">
         <form className="card-form" onSubmit={handleSubmit(onSubmit)}>
@@ -230,7 +222,6 @@ const Form = ({ handleFormSubmit, formData: initialFormData }) => {
         </form>
       </div>
     </FormProvider>
-    </div>
   );
 };
 
